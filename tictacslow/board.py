@@ -45,10 +45,9 @@ class Board:
         """
         if not self.get_square(coordinates):
             self.board[coordinates] = player
+            self.to_move += (-1)**(self.to_move + 1)
         else:
             print("Square already occupied")
-
-        self.to_move += (-1)**(self.to_move + 1)
 
     def get_square(self, coordinates):
         """Get the content of a square
