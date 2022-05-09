@@ -11,6 +11,6 @@ You can set if you want to play against a bot in game.py:
 ```
 self.use_engine = 1
 ```
-0: Dont use an engine (play against yourself)
-1: Use engine for player one (engine plays first)
-2: Use engine for player two (engine plays second)
+0. Dont use an engine (play against yourself)
+1. Use engine for player one (engine plays first)
+2. Use engine for player two (engine plays second)
