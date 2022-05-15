@@ -7,7 +7,7 @@ class Game:
 
     def __init__(self):
         self.board = Board()
-        self.use_engine = 1 # 0: no engine, 1: engine player one, 2: engine player two
+        self.use_engine = 2 # 0: no engine, 1: engine player one, 2: engine player two
         self.engine = Engine(self.use_engine)
 
 
@@ -25,7 +25,12 @@ class Game:
                 coordinates = np.array(coordinates.split()).astype(np.int64)
             self.board.make_move(self.board.to_move, (coordinates[0], coordinates[1]))
             self.board.print_board()
-        print("Winner: ", self.board.check_win())
+        if self.board.check_win() == 1:
+            print("Player 1 wins!")
+        elif self.board.check_win() == 2:
+            print("Player 2 wins!")
+        elif self.board.check_win() == 3:
+            print("Draw!")
 
 g = Game()
 g.play_game()

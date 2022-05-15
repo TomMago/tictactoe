@@ -70,6 +70,19 @@ class Board:
         print("2  |",int(self.board[0,2]), "|", int(self.board[1,2]), "|", int(self.board[2,2]),"|")
         print("   -------------")
 
+    def text_board(self):
+        return (
+            f'y\\x  0   1   2\n'
+            f'-------------\n'
+            f'0  |{int(self.board[0,0])}|{int(self.board[1,0])}|{int(self.board[2,0])}|\n'
+            f'-------------\n'
+            f'1  |{int(self.board[0,1])}|{int(self.board[1,1])}|{int(self.board[2,1])}|\n'
+            f'-------------\n'
+            f'2  |{int(self.board[0,2])}|{int(self.board[1,2])}|{int(self.board[2,2])}|\n'
+            f'-------------\n'
+        )
+
+
     def reset_board(self):
         self.board = np.zeros((3,3))
         self.to_move = 1
