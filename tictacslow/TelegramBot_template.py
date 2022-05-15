@@ -65,9 +65,9 @@ def food(update, context):
 
 def memes(update, context):
     update.message.reply_text('Hier sind die besten Memes über alles mögliche!')
-    reddit = praw.Reddit(client_id = 'P3pEG1jI2bWEwKImh3M5WQ',
-                         client_secret = 'HhJd7ZG5VkV7N3OgQDBcK_Fz4mjg3g',
-                         user_agent = 'meme-collector')
+    reddit = praw.Reddit(client_id = 'client id',
+                         client_secret = 'client secret',
+                         user_agent = 'user agent')
 
     subreddit = reddit.subreddit('ich_iel')
     posts = subreddit.hot(limit=10)
