@@ -142,7 +142,7 @@ def turn(update, context):
 
 
 def main():
-    updater = Updater("5249417340:AAHa7InAmLUcP5Z5GuXH6-7W9u1AEkpYAsY",
+    updater = Updater("API",
                       use_context=True)
     dp = updater.dispatcher
     # conversation handler for 'real' conversations
