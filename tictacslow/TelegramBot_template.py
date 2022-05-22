@@ -25,43 +25,8 @@ def hallo(update, context):
     update.message.reply_text('''
 Hallo! Ich bin ein Bot und du kannst einige Commands nutzen, um mit mir zu interagieren!
 /tictactoe: Hier kannst du gegen mich TicTacToe spielen!
-/chat: Wir können auch ein bisschen quatschen!
 /memes: Die besten Memes aller Zeiten''')
 
-def chat(update, context):
-    update.message.reply_text('Okay, erzähl mir was über dich! Wie heißt du?')
-    return NAME
-
-def name(update, context):
-    new_name = update.message.text
-    cud = context.user_data
-    cud[name] = new_name
-    update.message.reply_text(f'Hallo {cud[name]}! Du kannst mich Pya nennen! Was ist dein Lieblingsfach?')
-    return SUBJECT
-
-def subject(update, context):
-    new_subject = update.message.text
-    cud = context.user_data
-    cud[subject] = new_subject
-    if cud[subject].lower() == 'informatik':
-        update.message.reply_text('Das ist ja ein Zufall! Ich mag informatik auch am liebsten! Ich wurde nämlich mit der Programmiersprache Python geschrieben!')
-    elif cud[subject].lower() == 'sport':
-        update.message.reply_text('Oh, für dafür bin ich immer viiiel zu faul.' )
-    else:
-        update.message.reply_text(f'Ah ja, {cud[subject]}! Das mag ich auch ganz gerne, aber mein Lieblingsfach ist Informatik!')
-    update.message.reply_text('Und was ist dein Lieblingessen?')
-    return FOOD
-
-def food(update, context):
-    new_food = update.message.text
-    cud = context.user_data
-    cud[food] = new_food
-    if cud[food].lower() == 'pizza':
-        update.message.reply_text('Ich liebe Pizza! Am liebsten mit ganz viel Käse!')
-    else:
-        update.message.reply_text(f'{cud[food]}, also. Das klingt auch sehr gut, aber noch lieber mag ich Pizza.')
-    update.message.reply_text(f'Es war sehr interessant, ein bisschen mehr über dich zu erfahren. Ich glaube, ich mache jetzt erstmal einen Nap! Ich hoffe, wir sehen uns bald wieder, {cud[name]}!')
-    return ConversationHandler.END
 
 def memes(update, context):
     update.message.reply_text('Hier sind die besten Memes über alles mögliche!')
